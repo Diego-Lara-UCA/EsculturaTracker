@@ -9,14 +9,24 @@ import com.example.esculturatrackerapp.ScultureReviewerApplication
 import com.example.esculturatrackerapp.data.viewModel.ScultureModel
 import com.example.esculturatrackerapp.repository.ScultureRepository
 
+/**
+ * View model for Sculture
+ * */
 class ScultureViewModel(private val repository: ScultureRepository):ViewModel() {
     var name = MutableLiveData("")
     var material = MutableLiveData("")
     var status = MutableLiveData("")
 
+    /**
+     * Get Sculture function
+     * Add Sculture function -> addSculture(ScultureModel)
+     * */
     fun getScultures() = repository.getSculture()
     fun addScultures(sculture: ScultureModel) = repository.addSculture(sculture)
 
+    /**
+     * Validate data function
+     * */
     private fun validateData(): Boolean{
         when{
             name.value.isNullOrEmpty() -> return false
@@ -25,7 +35,10 @@ class ScultureViewModel(private val repository: ScultureRepository):ViewModel() 
         return true
     }
 
-    fun createMovie(){
+    /**
+     * Create Sculture function
+     * */
+    fun createSculture(){
         if (!validateData()){
             status.value = WRONG_DATA
             return
@@ -40,16 +53,25 @@ class ScultureViewModel(private val repository: ScultureRepository):ViewModel() 
         status.value = MOVIE_CREATED
     }
 
+    /**
+     * Clear status function
+     * */
     fun clearStatus(){
         status.value = INACTIVE
     }
 
+    /**
+     * Clear data function
+     * */
     fun clearData(){
         name.value = ""
         material.value = ""
     }
 
-    fun setSelectedMovie(sculture: ScultureModel){
+    /**
+     * Set selected sculture function
+     * */
+    fun setSelectedSculture(sculture: ScultureModel){
         name.value = sculture.Nombre
         material.value = sculture.Material
     }
