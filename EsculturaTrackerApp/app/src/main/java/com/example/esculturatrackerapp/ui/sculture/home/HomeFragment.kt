@@ -65,8 +65,8 @@ class HomeFragment : Fragment() {
         displaySculture()
     }
 
-    private fun showSelectedItem(movie: ScultureModel){
-        viewModel.setSelectedSculture(movie)
+    private fun showSelectedItem(sculture: ScultureModel){
+        viewModel.setSelectedSculture(sculture)
         findNavController().navigate(R.id.action_homeFragment_to_esculturaFragment)
     }
 
