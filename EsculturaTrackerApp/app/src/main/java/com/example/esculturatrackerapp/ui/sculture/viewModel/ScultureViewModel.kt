@@ -50,7 +50,7 @@ class ScultureViewModel(private val repository: ScultureRepository):ViewModel() 
         )
 
         addScultures(newSculture)
-        status.value = MOVIE_CREATED
+        status.value = SCULTURE_CREATED
     }
 
     /**
@@ -84,7 +84,7 @@ class ScultureViewModel(private val repository: ScultureRepository):ViewModel() 
             }
         }
 
-        const val MOVIE_CREATED = "Sculture created"
+        const val SCULTURE_CREATED = "Sculture created"
         const val WRONG_DATA = "Wrong data"
         const val INACTIVE = ""
     }
