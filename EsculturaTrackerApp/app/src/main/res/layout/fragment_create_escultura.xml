@@ -15,30 +15,52 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/crearescultura_textview"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/text_cardview"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crear Escultura"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/card"
+            app:cardCornerRadius="16dp">
+
+            <TextView
+                android:id="@+id/crearescultura_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Crea tu escultura"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+        </androidx.cardview.widget.CardView>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nombre_textfield"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:boxBackgroundColor="@color/card_recycle"
             android:hint="Nombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/crearescultura_textview">
+            app:layout_constraintTop_toBottomOf="@id/text_cardview">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nombre_textinput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={scultureviewmodel.name}"/>
+                android:text="@={scultureviewmodel.name}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -46,6 +68,10 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:boxBackgroundColor="@color/card_recycle"
             android:hint="Material"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,19 +81,21 @@
                 android:id="@+id/material_textinput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={scultureviewmodel.material}"/>
+                android:text="@={scultureviewmodel.material}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Crear escultura"
+            android:layout_marginTop="16dp"
             android:onClick="@{()->scultureviewmodel.createSculture()}"
+            android:text="Crear escultura"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/material_textfield" />
+            app:layout_constraintTop_toBottomOf="@+id/material_textfield"
+            android:backgroundTint="#a79a7e"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
